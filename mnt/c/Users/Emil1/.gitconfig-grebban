@@ -1,0 +1,5 @@
+[core] 
+    SshCommand = "ssh -i ~/.ssh/grebban-github" 
+[user] 
+    name = Emil Strömberg
+    email = emil.stromberg@grebban.com

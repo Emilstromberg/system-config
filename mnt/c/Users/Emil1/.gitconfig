@@ -1,0 +1,16 @@
+[user]
+	name = Emil Strömberg
+	email = emil.stromberg@grebban.com
+[safe]
+	directory = %(prefix)/C:/Users/Emil1/progg/grebban/royal-web
+	directory = C:/Users/Emil1/progg/grebban/active-brands-frontend
+	directory = %(prefix)/C:/Users/Emil1/progg/grebban/active-brands-frontend
+	directory = %(prefix)/C:/Users/Emil1/progg/grebban/sandqvist-frontend
+[merge]
+	ff = no
+[core]
+	autocrlf = false
+[includeIf "gitdir:~/progg/grebban/"]
+	path = .gitconfig-grebban
+[includeIf "gitdir:~/progg/personal/"]
+	path = .gitconfig-personal

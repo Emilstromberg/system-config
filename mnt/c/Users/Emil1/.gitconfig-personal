@@ -1,0 +1,5 @@
+[core] 
+    SshCommand = "ssh -i ~/.ssh/personal-github" 
+[user] 
+    name = Emil 
+    email = emil10stromberg@gmail.com
