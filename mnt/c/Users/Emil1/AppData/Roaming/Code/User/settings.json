@@ -1,0 +1,392 @@
+p{
+  "files.eol": "\n",
+  "editor.formatOnSave": true,
+  "workbench.settings.applyToAllProfiles": ["editor.formatOnSave"],
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.title": "${rootName} (${focusedView})",
+  "extensions.ignoreRecommendations": true,
+  //   "files.insertFinalNewline": true,
+  //   "editor.renderWhitespace": "all",
+  //   "emmet.includeLanguages": {
+  //     "javascript": "javascriptreact"
+  //   },
+  //   "gitlens.views.branches.files.compact": false,
+  //   "explorer.confirmDelete": false,
+  //   "[javascript]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //   },
+  //   "explorer.confirmDragAndDrop": false,
+  //   "explorer.compactFolders": false,
+  //   "editor.fontFamily": "Consolas Nerd Font",
+  //   //"editor.fontFamily": "MesloLGM Nerd Font",
+  //   "editor.fontSize": 16,
+  //   "terminal.integrated.fontSize": 15,
+  //   "terminal.integrated.minimumContrastRatio": 1,
+
+  //   "workbench.startupEditor": "none",
+  //   "[jsonc]": {
+  //     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  //   },
+
+  //   // get rid of 'abc' search suggstions
+  //   "editor.suggest.showWords": false,
+
+  //   "editor.acceptSuggestionOnEnter": "off",
+
+  //   "terminal.integrated.scrollback": 10000,
+
+  // Highlight search patterns
+  "vim.hlsearch": true,
+  "vim.gdefault": false,
+  "vim.sneak": true,
+  "vim.easymotion": true,
+  "vim.leader": "<Space>",
+  "vim.useSystemClipboard": true,
+  "vim.surround": true,
+  "vim.startInInsertMode": true,
+
+  // Prevent Vim from tinkering with certain hotkeys.
+  "vim.handleKeys": {
+    "<C-c>": false,
+    "<D-c>": false,
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-y>": false,
+    "<C-w>": false,
+    "<C-k>": false,
+    "<C-n>": false,
+    "<C-d>": false,
+    "<D-a>": false,
+    "<C-p>": false,
+    "<A-S-Up>": false,
+    "<A-S-Down>": false,
+  },
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Copy to the 0 registry instead of default clipboard when pressing d
+    {
+      "before": ["d"],
+      "after": ["\"", "0", "d"]
+    },
+    {
+      "before": ["D"],
+      "after": ["\"", "0", "D"]
+    },
+
+    // Ctrl+A to select all
+    {
+      "before": ["<C-a>"],
+      "after": ["g", "g", "V", "G"]
+    },
+
+    // Copy to default clipboard
+    {
+      "before": ["<Leader>", "d"],
+      "after": ["d"]
+    },
+    {
+      "before": ["<Leader>", "D"],
+      "after": ["D"]
+    },
+
+    {
+      "before": ["c"],
+      "after": ["\"", "0", "c"]
+    },
+    {
+      "before": ["<Leader>", "c"],
+      "after": ["c"]
+    },
+
+    {
+      "before": ["x"],
+      "after": ["\"", "0", "x"]
+    },
+    {
+      "before": ["<Leader>", "x"],
+      "after": ["x"]
+    },
+
+    // Concatinate lines
+    {
+      "before": ["<Leader>", "j"],
+      "after": ["J"]
+    },
+
+    // reverse ; and , for easier sneak navigation
+    {
+      "before": [","],
+      "after": [";"]
+    },
+    {
+      "before": [";"],
+      "after": [","]
+    },
+
+    // Clear last search highlighting
+    {
+      "before": ["<Leader>", "/"],
+      "commands": [":noh"]
+    },
+
+    // New line without going to insert mode
+    {
+      "before": ["<Leader>", "o"],
+      "after": ["o", "<Esc>"]
+    },
+    {
+      "before": ["<Leader>", "O"],
+      "after": ["O", "<Esc>"]
+    },
+
+    {
+      "before": ["<Leader>", "G"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+
+    // Shift + Y to yank until end of line
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
+    },
+
+    // u  will be same as ctrl-z
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+
+    // Log to console with variable (javascript)
+    {
+      "before": ["¤"],
+      "after": ["d", "d", "O", "<Esc>", "o", "<Esc>"],
+      "commands": [
+        {
+          "command": "extension.logClipboardAsVariable"
+        }
+      ]
+    },
+    // Log to console without variable (javascript)
+    {
+      "before": ["½"],
+      "after": ["d", "d", "O", "<Esc>", "o", "<Esc>"],
+      "commands": [
+        {
+          "command": "extension.logClipboard"
+        }
+      ]
+    },
+    // Log word to console
+    {
+      "before": ["<leader>", "w"],
+      "after": ["y", "i", "w", "<Esc>", "o"],
+      "commands": [
+        {
+          "command": "extension.logClipboardAsVariable"
+        }
+      ]
+    },
+
+    // add {} + return to a return statement in javascript
+    {
+      "before": ["<leader>", "e"],
+      "after": [
+        "<plugys>",
+        "a",
+        "(",
+        "{",
+        "a",
+        "<Enter>",
+        "<Enter>",
+        "<Enter>",
+        "r",
+        "e",
+        "t",
+        "u",
+        "r",
+        "n",
+        "<Esc>",
+        "k",
+        "k",
+        "i"
+      ]
+    },
+
+    // EasyMotion
+    {
+      "before": ["<Leader>", "k"],
+      "after": ["<Leader>", "<Leader>", "w"]
+    },
+    {
+      "before": ["<Leader>", "l"],
+      "after": ["<Leader>", "<Leader>", "b"]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Copy to the 0 registry instead of default clipboard when pressing d
+    {
+      "before": ["d"],
+      "after": ["\"", "0", "d"]
+    },
+
+    // Copy to default clipboard
+    {
+      "before": ["<Leader>", "d"],
+      "after": ["d"]
+    },
+
+    {
+      "before": ["c"],
+      "after": ["\"", "0", "c"]
+    },
+    {
+      "before": ["<Leader>", "c"],
+      "after": ["c"]
+    },
+
+    {
+      "before": ["x"],
+      "after": ["\"", "0", "x"]
+    },
+    {
+      "before": ["<Leader>", "x"],
+      "after": ["x"]
+    },
+
+    // Copy to the 0 registry when pasting and collect what to paste from the
+    // default clipboard
+    {
+      "before": ["p"],
+      "after": ["\"", "0", "d", "P"]
+    },
+
+    // Go to insert mode when pressing i
+    {
+      "before": ["i"],
+      "after": ["<Esc>", "i"]
+    },
+
+    // EasyMotion
+    {
+      "before": ["<Leader>", "n"],
+      "after": ["<Leader>", "<Leader>", "w"]
+    },
+    {
+      "before": ["<Leader>", "e"],
+      "after": ["<Leader>", "<Leader>", "b"]
+    }
+  ],
+
+  "vim.insertModeKeyBindingsNonRecursive": [
+    // Ctrl+A to select all
+    {
+      "before": ["<C-a>"],
+      "after": ["<Esc>", "g", "g", "V", "G"]
+    },
+
+    // Log to console with variable (javascript)
+    {
+      "before": ["¤"],
+      "after": ["<Esc>", "d", "d", "O", "<Esc>", "o", "<Esc>"],
+      "commands": [
+        {
+          "command": "extension.logClipboardAsVariable"
+        }
+      ]
+    },
+    // Log to console without variable (javascript)
+    {
+      "before": ["½"],
+      "after": ["<Esc>", "d", "d", "O", "<Esc>", "o", "<Esc>"],
+      "commands": [
+        {
+          "command": "extension.logClipboard"
+        }
+      ]
+    }
+  ],
+
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabCompletion": "on",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "tabnine.experimentalAutoImports": true,
+  "git-graph.repository.commits.fetchAvatars": true,
+  "[markdown]": {
+    "editor.formatOnSave": false
+  },
+  "[shellscript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "mkhl.shfmt"
+  },
+
+  "git.enableSmartCommit": true,
+  "editor.inlineSuggest.enabled": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "workbench.panel.defaultLocation": "left",
+  "colorTabs.config": [
+    {
+      "regex": "Users/olof/Library/Application Support/Code/User/*",
+      "color": "#049",
+      "label": "COLOR TEST"
+    },
+    {
+      "regex": "packages/royaldesign/*",
+      "color": "#C67178",
+      "label": "ROYAL DESIGN"
+    },
+    {
+      "regex": "packages/r21/*",
+      "color": "#2a2a2a",
+      "label": "RUM21"
+    },
+    {
+      "regex": "packages/core-web/*",
+      "color": "#049",
+      "label": "CORE-WEB"
+    }
+  ],
+  "colorTabs.statusBarBackground": false,
+  "colorTabs.titleBackground": true,
+  "colorTabs.tabBorder": false,
+  "colorTabs.ignoreCase": true,
+
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+
+  "git.openRepositoryInParentFolders": "never",
+
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  "[swift]": {
+    "editor.defaultFormatter": "vknabel.vscode-apple-swift-format"
+  },
+  "workbench.iconTheme": null,
+
+  "rewrap.wrappingColumn": 90,
+
+  //   "workbench.colorCustomizations": {
+  //     "[Solarized Light]": {
+  //       "terminal.foreground": "#657b83",
+  //       "terminalOverviewRuler.cursorForeground": "#586e75",
+  //       "terminal.ansiBlack": "#fdf6e3",
+  //       "terminal.ansiBrightBlack": "#93a1a1",
+  //       "terminal.ansiWhite": "#073642",
+  //       "terminal.ansiBrightWhite": "#002b36"
+  //     }
+  //   },
+  //   "workbench.colorTheme": "Solarized Light",
+  //   "python.formatting.provider": "none",
+  "terminal.integrated.enableMultiLinePasteWarning": false
+}

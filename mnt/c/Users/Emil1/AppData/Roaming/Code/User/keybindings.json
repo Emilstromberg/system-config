@@ -1,0 +1,25 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "ctrl+alt+z",
+    "command": "editor.action.sortLinesAscending"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "extension.logClipboard"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "extension.logClipboardAsVariable"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "-extension.vim_cmd+alt+up",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "-extension.vim_cmd+alt+down",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  }
+]
